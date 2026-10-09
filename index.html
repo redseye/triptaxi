@@ -288,15 +288,12 @@
   .stay dt { font-size: 12px; color: var(--lagoon); font-weight: 700; letter-spacing: .14em; }
   .stay dd { margin: 0; font-size: 14px; line-height: 1.6; }
 
-  /* Food pick */
-  .eat {
-    display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: baseline;
-    border: 1px dashed var(--lagoon); border-radius: 8px;
-    padding: 12px 14px;
-  }
-  .eat-tag { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--surface); background: var(--lagoon); padding: 1px 8px; border-radius: 3px; white-space: nowrap; }
-  .eat b { font-size: 15px; color: var(--heading); }
-  .eat p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+  /* Nearby food */
+  .food { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; align-items: baseline; margin-top: 6px; }
+  .food-tag { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; color: var(--lagoon); border: 1px solid var(--lagoon); padding: 0 6px; border-radius: 3px; white-space: nowrap; line-height: 1.6; }
+  .food ul { list-style: none; padding: 0; display: grid; gap: 3px; font-size: 13.5px; line-height: 1.6; color: var(--muted); min-width: 0; }
+  .food b { color: var(--ink); font-weight: 700; }
+  .food .chip { margin-inline: 4px; }
 
   /* Fees */
   .fees { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -328,6 +325,7 @@
   }
 
   @media (max-width: 640px) {
+    .daynav .km { display: none; }
     .hero { padding-block: 32px 64px; }
     .stay { grid-template-columns: 1fr; }
     .stay > div + div { border-left: 0; border-top: 1px solid var(--line); }
@@ -433,10 +431,10 @@
 
       <nav class="daynav" aria-label="每日行程">
         <ol>
-          <li><a href="#day1"><span class="n">DAY 1</span><span class="s">11/12・54.5 km</span></a></li>
-          <li><a href="#day2"><span class="n">DAY 2</span><span class="s">11/13・191.5 km</span></a></li>
-          <li><a href="#day3"><span class="n">DAY 3</span><span class="s">11/14・80.8 km</span></a></li>
-          <li><a href="#day4"><span class="n">DAY 4</span><span class="s">11/15・31.7 km</span></a></li>
+          <li><a href="#day1"><span class="n">DAY 1</span><span class="s">11/12<span class="km">・54.5 km</span></span></a></li>
+          <li><a href="#day2"><span class="n">DAY 2</span><span class="s">11/13<span class="km">・191.5 km</span></span></a></li>
+          <li><a href="#day3"><span class="n">DAY 3</span><span class="s">11/14<span class="km">・80.8 km</span></span></a></li>
+          <li><a href="#day4"><span class="n">DAY 4</span><span class="s">11/15<span class="km">・31.7 km</span></span></a></li>
         </ol>
       </nav>
 
@@ -465,15 +463,30 @@
               <li class="stop">
                 <div class="stop-name">知念岬公園</div>
                 <p class="stop-desc">突出於太平洋的海岬草原，天氣晴朗時可遠眺久高島。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>浜辺の茶屋</b>・南城市海岸邊的咖啡館，座位正對沙灘與大海</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">19.5 km</span><span class="min">35 – 45 分</span><span class="via">貫穿南城市至那霸新都心商圈</span></li>
               <li class="stop">
                 <div class="stop-name">T Galleria 沖縄 by DFS</div>
                 <p class="stop-desc">新都心的大型免稅精品購物中心，晚餐可於周邊自由享用。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>San-A 那霸 Main Place</b>・DFS 附近的大型購物中心，美食街與餐廳選擇多</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">4.5 km</span><span class="min">12 – 18 分</span><span class="via">橫跨市區至西町飯店</span></li>
               <li class="stop end">
                 <div class="stop-name">那霸倫勃朗風格飯店 Check-in</div>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>Jack’s Steak House</b>・1953 年創業的老牌牛排館，與飯店同在西町一帶</li>
+                  </ul>
+                </div>
               </li>
             </ol>
             <dl class="stay">
@@ -501,16 +514,33 @@
               <li class="stop">
                 <div class="stop-name">沖繩美麗海水族館</div>
                 <p class="stop-desc">位於海洋博公園內，招牌「黑潮之海」大水槽可見鯨鯊與鬼蝠魟，館外還有海豚劇場。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>きしもと食堂 本店</b>・1905 年創業的沖繩麵老店，距水族館約 5 km，賣完為止</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">30.5 km</span><span class="min">45 – 50 分</span><span class="via">本部半島沿岸，接古宇利大橋</span></li>
               <li class="stop">
                 <div class="stop-name">古宇利島・古宇利海洋塔</div>
                 <p class="stop-desc">跨越碧綠海面的古宇利大橋是沖繩經典兜風路線，海洋塔頂可俯瞰大橋與島嶼全景。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>KOURI SHRIMP</b>・島上人氣蒜味鮮蝦飯，可外帶到海邊享用</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">73.0 km</span><span class="min">1h25m – 1h40m</span><span class="via">經由高速公路南下至沖繩南 IC</span></li>
               <li class="stop">
                 <div class="stop-name">美國村 散策</div>
                 <p class="stop-desc">北谷海濱的美式風情街區，傍晚可欣賞東海夕陽。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>A&amp;W 美浜店</b>・日本只有沖繩吃得到的美式速食，必點麥根沙士與捲捲薯條</li>
+                    <li><b>Blue Seal 北谷店</b>・沖繩代表性冰淇淋，30 多種口味</li>
+                    <li><b>ポーたま 北谷美國村店</b>・沖繩名物豬肉蛋飯糰</li>
+                  </ul>
+                </div>
               </li>
               <li class="stop end" style="margin-top:14px">
                 <div class="stop-name">北谷飯店 Check-in</div>
@@ -541,34 +571,49 @@
               <li class="stop">
                 <div class="stop-name">萬座毛</div>
                 <p class="stop-desc">隆起珊瑚礁形成的海崖草原，招牌「象鼻岩」是恩納海岸最經典的畫面。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>萬座毛限定「われ塩せんべい」</b>・園區直營店的碎片仙貝，有鹽味、蒜味辣油、梅子三種口味</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">10.0 km</span><span class="min">15 – 20 分</span><span class="via">國道 58 號沿海岸南下</span></li>
               <li class="stop">
                 <div class="stop-name">琉球村</div>
                 <p class="stop-desc">移築百年古民家而成的主題村落，可欣賞琉球傳統表演與工藝體驗。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>おんなの駅 なかゆくい市場</b>・恩納村在地市集，小吃與農特產集中，10:00–19:00</li>
+                    <li><b>Seaside Drive-in</b>・同在恩納村的海景美式餐廳</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">10.8 km</span><span class="min">20 – 25 分</span><span class="via">讀谷村西側海岬絕景</span></li>
               <li class="stop">
                 <div class="stop-name">殘波岬燈塔</div>
                 <p class="stop-desc">白色燈塔佇立在珊瑚礁斷崖上，可登塔遠眺東海與綿延海岸線。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>御菓子御殿 讀谷本店</b>・紅芋塔創始店，就在殘波岬附近，可隔著玻璃參觀製程</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">31.0 km</span><span class="min">55 – 70 分</span><span class="via">週六午後南下進市區，易塞車</span></li>
               <li class="stop">
                 <div class="stop-name">國際通・第一牧志公設市場</div>
                 <p class="stop-desc">那霸最熱鬧的購物大街；牧志市場一樓選購海鮮，可送到二樓餐廳代客料理。晚餐自由享用。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>JEF 苦瓜漢堡（ぬーやるバーガー）</b><span class="chip">標注</span>沖繩在地速食，招牌漢堡夾苦瓜煎蛋；Sunrise 那霸店距國際通むつみ橋路口步行約 5 分鐘，9:00–20:00</li>
+                    <li><b>ポーたま 牧志市場店</b>・豬肉蛋飯糰的發源店，就在牧志市場</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">2.5 km</span><span class="min">10 – 15 分</span><span class="via">前往曙一丁目飯店</span></li>
               <li class="stop end">
                 <div class="stop-name">那霸 B/C 飯店 Check-in</div>
               </li>
             </ol>
-            <div class="eat">
-              <span class="eat-tag">美食標注</span>
-              <div>
-                <b>JEF 苦瓜漢堡（ぬーやるバーガー）</b>
-                <p>沖繩在地速食 JEF 的招牌漢堡，夾入加了苦瓜的煎蛋，是只有在沖繩吃得到的口味。</p>
-              </div>
-            </div>
             <dl class="stay">
               <div><dt>午餐</dt><dd>琉球風味特色料理</dd></div>
               <div><dt>晚餐</dt><dd>國際通自由逛街，敬請自理</dd></div>
@@ -599,16 +644,32 @@
               <li class="stop">
                 <div class="stop-name">瀨長島 Umikaji Terrace <span class="chip">午餐</span></div>
                 <p class="stop-desc">依坡而建的白色商店街，緊鄰那霸機場跑道，邊用餐邊看飛機低空起降。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>幸せのパンケーキ</b>・招牌舒芙蕾鬆餅，座位約 50 席，常需排隊</li>
+                    <li><b>瀬長茶屋</b>・淋上沖繩黑糖蜜的黃豆粉雪花冰</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">11.5 km</span><span class="min">25 – 35 分</span><span class="via">經那霸東 Bypass 抵達首里高地</span></li>
               <li class="stop">
                 <div class="stop-name">首里城公園 <span class="chip time">14:15 前集合發車</span></div>
                 <p class="stop-desc">琉球王國的政治與文化中心，世界遺產「首里城跡」所在地。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li>名店「首里そば」週四、週日公休，<b>11/15（日）不營業</b>，請勿專程前往</li>
+                  </ul>
+                </div>
               </li>
               <li class="leg"><span class="km">10.5 km</span><span class="min">25 – 35 分</span><span class="via">貫穿市區往西，抵達機場國際線</span></li>
               <li class="stop end">
                 <div class="stop-name">那霸機場 送機 <span class="chip time">14:50 前完成報到</span> <span class="chip time">16:50 起飛</span></div>
                 <p class="stop-desc">搭乘樂桃 MM929 返回桃園，17:35 抵達。</p>
+                <div class="food"><span class="food-tag">附近美食</span>
+                  <ul>
+                    <li><b>ポーたま 國際線美食街店</b>・國際線航廈 4 樓、安檢前，登機前可買豬肉蛋飯糰</li>
+                  </ul>
+                </div>
               </li>
             </ol>
             <dl class="stay">
@@ -654,6 +715,7 @@
           <li><b>包車服務時限：</b>單日用車上限 10 小時，當日服務最晚需於 21:00 前結束。</li>
           <li><b>費用：</b>報價已含車資、司機餐費、司機小費與油資；高速公路過路費（ETC）及景點停車費於現場實報實銷。</li>
           <li><b>車程說明：</b>里程與車程為 Google Maps 預估值，未含停留時間；週末及傍晚進入那霸市區容易塞車，請預留彈性。</li>
+          <li><b>附近美食：</b>為推薦清單，不含在行程餐食內；店家營業時間與公休日可能變動，前往前請以 Google Maps 或店家公告為準。</li>
         </ol>
       </div>
     </section>
