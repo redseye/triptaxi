@@ -288,6 +288,16 @@
   .stay dt { font-size: 12px; color: var(--lagoon); font-weight: 700; letter-spacing: .14em; }
   .stay dd { margin: 0; font-size: 14px; line-height: 1.6; }
 
+  /* Food pick */
+  .eat {
+    display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: baseline;
+    border: 1px dashed var(--lagoon); border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .eat-tag { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--surface); background: var(--lagoon); padding: 1px 8px; border-radius: 3px; white-space: nowrap; }
+  .eat b { font-size: 15px; color: var(--heading); }
+  .eat p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
   /* Fees */
   .fees { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .fee {
@@ -552,6 +562,13 @@
                 <div class="stop-name">那霸 B/C 飯店 Check-in</div>
               </li>
             </ol>
+            <div class="eat">
+              <span class="eat-tag">美食標注</span>
+              <div>
+                <b>JEF 苦瓜漢堡（ぬーやるバーガー）</b>
+                <p>沖繩在地速食 JEF 的招牌漢堡，夾入加了苦瓜的煎蛋，是只有在沖繩吃得到的口味。</p>
+              </div>
+            </div>
             <dl class="stay">
               <div><dt>午餐</dt><dd>琉球風味特色料理</dd></div>
               <div><dt>晚餐</dt><dd>國際通自由逛街，敬請自理</dd></div>
